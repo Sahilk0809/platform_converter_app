@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:platform_converter_app/utils/tab_view_list.dart';
 import 'package:provider/provider.dart';
+import '../../provider/platform_change_controller.dart';
 import '../../provider/platform_provider.dart';
 
 class IosUi extends StatelessWidget {
@@ -8,16 +9,16 @@ class IosUi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var platformProviderFalse =
-        Provider.of<PlatFormProvider>(context, listen: false);
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: const Text('Platform Converter'),
-        trailing: Consumer<PlatFormProvider>(builder: (context, value, child) {
+        trailing:
+            Consumer<PlatformChangeProvider>(builder: (context, value, child) {
           return CupertinoSwitch(
-            value: value.isIosOrNot,
+            value: value.isIos,
             onChanged: (value) {
-              platformProviderFalse.toggleBetweenPlatforms();
+              Provider.of<PlatformChangeProvider>(context, listen: false)
+                  .toggleBetweenPlatforms();
             },
           );
         }),

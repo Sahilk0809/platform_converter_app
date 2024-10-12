@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_converter_app/provider/platform_change_controller.dart';
 import 'package:platform_converter_app/provider/platform_provider.dart';
 import 'package:platform_converter_app/provider/task1_provider.dart';
 import 'package:platform_converter_app/provider/theme_controller.dart';
@@ -9,12 +10,14 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 bool isDark = false;
+bool isIos = false;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   isDark = sharedPreferences.getBool("theme") ?? false;
+  isIos = sharedPreferences.getBool("platform") ?? false;
 
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
@@ -26,6 +29,9 @@ Future<void> main() async {
     ChangeNotifierProvider(
       create: (context) => ThemeController(isDark),
     ),
+    ChangeNotifierProvider(
+      create: (context) => PlatformChangeProvider(isIos),
+    ),
   ], child: const MyApp()));
 }
 
@@ -35,7 +41,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var providerTheme = Provider.of<ThemeController>(context);
-    return (!Provider.of<PlatFormProvider>(context).isIosOrNot)
+    return (!Provider.of<PlatformChangeProvider>(context).isIos)
         ? MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: (providerTheme.isDark)

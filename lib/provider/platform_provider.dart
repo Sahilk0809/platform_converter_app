@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:platform_converter_app/helper/database_helper.dart';
 import 'package:platform_converter_app/modal/user_modal.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PlatFormProvider extends ChangeNotifier {
   String profile = '', date = '', time = '';
@@ -10,17 +11,12 @@ class PlatFormProvider extends ChangeNotifier {
   var txtPhone = TextEditingController();
   var txtChatConversation = TextEditingController();
   List userData = [];
-  bool isIosOrNot = false;
   GlobalKey<FormState> validateKey = GlobalKey();
   bool profileUpdate = false;
+  SharedPreferences? sharedPreferences;
 
   void toggleProfileUpdate(){
     profileUpdate = !profileUpdate;
-    notifyListeners();
-  }
-
-  void toggleBetweenPlatforms() {
-    isIosOrNot = !isIosOrNot;
     notifyListeners();
   }
 

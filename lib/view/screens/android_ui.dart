@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platform_converter_app/provider/platform_change_controller.dart';
 import 'package:platform_converter_app/provider/platform_provider.dart';
 import 'package:platform_converter_app/provider/theme_controller.dart';
 import 'package:platform_converter_app/view/screens/components/add_users.dart';
@@ -20,11 +21,11 @@ class AndroidUi extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Platform Converter'),
           actions: [
-            Consumer<PlatFormProvider>(builder: (context, value, child) {
+            Consumer<PlatformChangeProvider>(builder: (context, value, child) {
               return Switch(
-                value: value.isIosOrNot,
+                value: value.isIos,
                 onChanged: (value) {
-                  Provider.of<PlatFormProvider>(context, listen: false)
+                  Provider.of<PlatformChangeProvider>(context, listen: false)
                       .toggleBetweenPlatforms();
                 },
               );
