@@ -8,8 +8,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 class PlatFormProvider extends ChangeNotifier {
   String profile = '', date = '', time = '';
   var txtName = TextEditingController();
+  var txtCurrentUserName = TextEditingController();
   var txtPhone = TextEditingController();
   var txtChatConversation = TextEditingController();
+  var txtCurrentUserChat = TextEditingController();
   List userData = [];
   GlobalKey<FormState> validateKey = GlobalKey();
   bool profileUpdate = false;

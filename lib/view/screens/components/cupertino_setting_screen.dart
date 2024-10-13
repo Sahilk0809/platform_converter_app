@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:platform_converter_app/provider/platform_provider.dart';
+import 'package:platform_converter_app/view/screens/components/my_cupertino_text_field.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/theme_controller.dart';
@@ -35,31 +36,47 @@ class CupertinoSettingScreen extends StatelessWidget {
           ),
         ),
         (platformProviderTrue.profileUpdate)
-            ? Column(
-                children: [
-                  Consumer<PlatFormProvider>(
-                    builder: (context, value, child) => Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CupertinoButton(
-                          onPressed: () {
-                            platformProviderFalse.addProfile();
-                          },
-                          child: CircleAvatar(
-                            radius: 50,
-                            backgroundImage: (value.profile != '')
-                                ? FileImage(
-                                    File(value.profile),
-                                  )
-                                : const NetworkImage(
-                                    'https://www.pngkit.com/png/detail/25-258694_cool-avatar-transparent-image-cool-boy-avatar.png'),
+            ? Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                  children: [
+                    Consumer<PlatFormProvider>(
+                      builder: (context, value, child) => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CupertinoButton(
+                            onPressed: () {
+                              platformProviderFalse.addProfile();
+                            },
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundImage: (value.profile != '')
+                                  ? FileImage(
+                                      File(value.profile),
+                                    )
+                                  : const NetworkImage(
+                                      'https://www.pngkit.com/png/detail/25-258694_cool-avatar-transparent-image-cool-boy-avatar.png'),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              )
+                    MyCupertinoTextField(
+                      placeholder: 'Name',
+                      controller: platformProviderTrue.txtCurrentUserName,
+                      icons: CupertinoIcons.person_add,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    MyCupertinoTextField(
+                      placeholder: 'Chat Conversation',
+                      controller: platformProviderTrue.txtCurrentUserChat,
+                      icons: CupertinoIcons.person_add,
+                    ),
+                  ],
+                ),
+            )
             : Container(),
         CupertinoListTile(
           leading: const Icon(CupertinoIcons.moon),

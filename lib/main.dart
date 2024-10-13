@@ -19,20 +19,25 @@ Future<void> main() async {
   isDark = sharedPreferences.getBool("theme") ?? false;
   isIos = sharedPreferences.getBool("platform") ?? false;
 
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(
-      create: (context) => Task1Provider(),
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Task1Provider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PlatFormProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ThemeController(isDark),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PlatformChangeProvider(isIos),
+        ),
+      ],
+      child: const MyApp(),
     ),
-    ChangeNotifierProvider(
-      create: (context) => PlatFormProvider(),
-    ),
-    ChangeNotifierProvider(
-      create: (context) => ThemeController(isDark),
-    ),
-    ChangeNotifierProvider(
-      create: (context) => PlatformChangeProvider(isIos),
-    ),
-  ], child: const MyApp()));
+  );
 }
 
 class MyApp extends StatelessWidget {
