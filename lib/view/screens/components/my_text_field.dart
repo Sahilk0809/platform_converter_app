@@ -6,12 +6,14 @@ class MyTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
   final TextInputType? textInputType;
+  final Icon prefixIcon;
 
   const MyTextField({
     super.key,
     required this.controller,
     required this.label,
     this.textInputType,
+    required this.prefixIcon,
   });
 
   @override
@@ -20,6 +22,7 @@ class MyTextField extends StatelessWidget {
       controller: controller,
       keyboardType: textInputType,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon,
         labelText: label,
         labelStyle: const TextStyle(fontSize: 18),
         border: OutlineInputBorder(

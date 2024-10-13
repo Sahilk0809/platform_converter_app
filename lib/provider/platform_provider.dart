@@ -17,7 +17,7 @@ class PlatFormProvider extends ChangeNotifier {
   bool profileUpdate = false;
   SharedPreferences? sharedPreferences;
 
-  void toggleProfileUpdate(){
+  void toggleProfileUpdate() {
     profileUpdate = !profileUpdate;
     notifyListeners();
   }
@@ -95,6 +95,7 @@ class PlatFormProvider extends ChangeNotifier {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('Pick Time'),
+                  duration: Duration(seconds: 2),
                 ),
               );
             }
@@ -102,6 +103,7 @@ class PlatFormProvider extends ChangeNotifier {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text('Pick Date'),
+                duration: Duration(seconds: 2),
               ),
             );
           }
@@ -109,6 +111,7 @@ class PlatFormProvider extends ChangeNotifier {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Enter chat conversation'),
+              duration: Duration(seconds: 2),
             ),
           );
         }
@@ -116,6 +119,7 @@ class PlatFormProvider extends ChangeNotifier {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Enter Phone Number'),
+            duration: Duration(seconds: 2),
           ),
         );
       }
@@ -123,6 +127,7 @@ class PlatFormProvider extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Enter name'),
+          duration: Duration(seconds: 2),
         ),
       );
     }
@@ -158,6 +163,8 @@ class PlatFormProvider extends ChangeNotifier {
     time = '';
     date = '';
     profile = '';
+    txtCurrentUserChat.clear();
+    txtCurrentUserName.clear();
     notifyListeners();
   }
 
