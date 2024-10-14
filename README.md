@@ -24,15 +24,15 @@
 
 ## IOS Light Theme
 <img src="https://github.com/user-attachments/assets/b7288e58-45ff-49ae-8abd-096145509df3" height=65% width=22%>
-<img src="https://github.com/user-attachments/assets/b4eaac64-8833-4b47-8637-419df6ecc867" height=65% width=22%>
-<img src="https://github.com/user-attachments/assets/5fe078ef-bc97-4ebe-bd58-ad3a0dc7c363" height=65% width=22%>
-<img src="https://github.com/user-attachments/assets/cc429ab6-3753-4095-ad39-494f1bd35768" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/c579a9d0-2dd1-4bc7-a242-8331fc4439c2" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/6db8bfbf-9d64-4f71-8825-e16312725ae0" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/57047ed2-a1ee-457f-8ec6-b93bd6142024" height=65% width=22%>
 
 ## IOS Dark Theme
-<img src="https://github.com/user-attachments/assets/d469727e-4645-402b-a973-59e4a8883a30" height=65% width=22%>
-<img src="https://github.com/user-attachments/assets/d9317c4d-a821-4516-88ec-157e98beceb4" height=65% width=22%>
-<img src="https://github.com/user-attachments/assets/b7269e36-4d02-4eeb-8e97-e99ea01e19c1" height=65% width=22%>
-<img src="https://github.com/user-attachments/assets/62706063-d86f-419b-866f-ff0e687c1080" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/bde3ee1b-1fa7-413d-b362-b794be84cf13" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/b102669e-e6ab-4108-a657-9fb958248d82" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/b645d1ea-dd33-40f3-ac49-b452b358cfbe" height=65% width=22%>
+<img src="https://github.com/user-attachments/assets/e63bd725-b06b-4e0f-8940-e258a58cb805" height=65% width=22%>
 
 
 ## 👇Video Link👇
