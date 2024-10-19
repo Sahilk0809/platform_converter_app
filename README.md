@@ -10,6 +10,10 @@
 
 # Platform Converter App
 
+## Description
+
+A cross-platform Flutter app for seamless contact management. It allows users to store, view, and organize contact information efficiently, with all data securely stored locally using SQLite for offline access. The app features a clean and intuitive interface, ensuring easy navigation and fast performance. Powered by Provider for state management, it works smoothly across Android and iOS platforms. Ideal for anyone looking to manage contacts without relying on cloud services.
+
 ## Android Light Theme
 <img src="https://github.com/user-attachments/assets/e2187f4a-3f8b-4520-a16f-e3dc2b8d6fb0" height=65% width=22%>
 <img src="https://github.com/user-attachments/assets/ffa64309-e7d2-4e7b-b967-1d95df637d83" height=65% width=22%>
